@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="url" format="string" />
+    <attr name="onClickCommand" format="reference" />
+    <attr name="render" format="string"/>
+    <attr name="textWatcher" format="reference" />
+    <attr name="isThrottleFirst" format="boolean" />
+
+    <attr name="items" format="reference" />
+    <attr name="adapter" format="reference" />
+    <declare-styleable name="View">
+        <attr name="onClickCommand" />
+    </declare-styleable>
+    <declare-styleable name="RecyclerView" parent="AdapterView">
+        <attr name="lineManager" format="reference" />
+        <attr name="layoutManager" format="reference" />
+        <attr name="itemClick" format="reference"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.vinsuan.demo820.model.ArticleModel.DatasBean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.author}"
+            android:textColor="#666666"
+            android:textSize="16sp"
+            tools:text="高磊" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/author"
+            android:text="@{model.superChapterName}"
+            android:textColor="#666666"
+            android:textSize="16sp"
+            tools:text="自定义控件" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/author"
+            android:layout_marginTop="5dp"
+            android:text="@{model.title}"
+            android:textColor="#333333"
+            android:textSize="20sp"
+            tools:text="从Tinker加载dex补丁看动态加载插件过程" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginTop="5dp"
+            android:maxLines="1"
+            android:text="@{model.niceShareDate}"
+            android:textColor="#666666"
+            android:textSize="16sp"
+            tools:text="2020-08-17 20:36" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/time"
+            android:layout_marginTop="4dp"
+            android:background="#000000" />
+    </RelativeLayout>
+</layout>

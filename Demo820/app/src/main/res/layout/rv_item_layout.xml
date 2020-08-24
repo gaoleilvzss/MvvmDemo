@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.vinsuan.demo820.model.RVItemModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/head"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:url="@{model.avatar}"
+            tools:src="@drawable/placeholder" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/head"
+            android:text="@{model.name}"
+            android:textColor="#333333"
+            android:textSize="20sp"
+            tools:text="高磊" />
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_toRightOf="@id/head"
+            android:text="@{model.age}"
+            android:textColor="#333333"
+            android:textSize="20sp"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/age"
+            android:layout_toRightOf="@id/head"
+            android:text="@{model.gender}"
+            android:textColor="#333333"
+            android:textSize="20sp"
+            tools:text="男" />
+    </RelativeLayout>
+</layout>

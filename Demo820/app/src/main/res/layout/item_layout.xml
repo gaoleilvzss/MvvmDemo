@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.vinsuan.demo820.adapter.RVItemAdapter" />
+
+        <variable
+            name="test"
+            type="com.vinsuan.demo820.MainViewModel" />
+
+        <variable
+            name="adapter"
+            type="RVItemAdapter" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_bg_selector"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@={test.text}"
+                android:textSize="24sp"
+                app:isThrottleFirst="false"
+                app:onClickCommand="@{test.listener}" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:url="@{test.observableField_url}"
+                tools:src="@drawable/placeholder" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="test input something"
+                android:text="@={test.et_string}"
+                app:textWatcher="@{test.textWatcher}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@={test.et_callback_string}"
+                android:textSize="24sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_10"
+                android:overScrollMode="never"
+                app:adapter="@{test.rvItemAdapter}"
+                app:itemClick="@{test.adapterListener}"
+                app:layoutManager="@{test.linearLayoutManager}" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#000000" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_10"
+                android:overScrollMode="never"
+                app:itemClick="@{test.newWorkClickListener}"
+                app:adapter="@{test.netWorkAdapter}"
+                app:layoutManager="@{test.linearLayoutManager1}" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
